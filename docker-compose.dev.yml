@@ -1,0 +1,12 @@
+services:
+    ml_service:
+        container_name: ml_dev
+        build:
+            context: .
+            dockerfile: Dockerfile.dev
+        volumes:
+            - .:/app
+            - ./data:/app/data
+        environment:
+            - PYTHONUNBUFFERED=1
+        tty: true
